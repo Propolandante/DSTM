@@ -19,7 +19,9 @@ Game.initialize = function() {
 	imgNames.push("ListenBG");
 	imagesrc.push("images/powersthatbe_bg.png");
 	imgNames.push("DeliverBG");
-	imagesrc.push("images/DSTM_deliver_placeholder.png");
+	imagesrc.push("images/deliver_bg.png");
+	imgNames.push("Paper");
+	imagesrc.push("images/paper.png");
 	
 	// start preloading
     for(i=0; i < imagesrc.length; i++) 
