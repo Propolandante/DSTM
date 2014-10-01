@@ -27,6 +27,7 @@ drawListen = function(){
 drawListenScene = function() {
 	
 	Game.context.drawImage(images[imgNames.indexOf("ListenBG")], 0, 0);
+	Game.context.drawImage(images[imgNames.indexOf("Paper")], 87, 290);
 };
 
 //drawInfo = function() {
