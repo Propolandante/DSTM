@@ -15,7 +15,22 @@ Game.initialize = function() {
 	//this.changeState("DELIVER"); // this should initialize to START, for the start menu
 	this.context = canvas.getContext('2d');
 	Game.state = "DELIVER";
-
+	
+	Game.strings = null;
+	
+	// load the game's Strings
+	Papa.parse("/DSTM/strings/strings.csv", {
+	download: true,
+	header: true,
+	complete: function(results) {
+		// TODO game should not start until this has completed
+		console.log("Remote file parsed!", results);
+		Game.strings = results.data;
+		
+		
+	}
+});
+	
 	imgNames.push("ListenBG");
 	imagesrc.push("images/powersthatbe_bg.png");
 	imgNames.push("DeliverBG");

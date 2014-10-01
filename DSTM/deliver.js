@@ -27,10 +27,28 @@ drawDeliverScene = function() {
 
 drawInfo = function() {
 	
-	infoString = "Jul 24 Press Conference";
+	infoString = null;
+	infoId = "DAY_001_TITLE_A";
+	
+	for (var i = 0; i < Game.strings.length; ++i)
+	{
+		if (Game.strings[i].Identifier === infoId)
+		{
+			infoString = Game.strings[i].String;
+		}
+	}
+	
+	if (!infoString)
+	{
+		console.log("No infoString!");
+	}
 	
 	Game.context.font = "italic 20px arial";
 	Game.context.fillStyle = "#FFFFFF";
 	Game.context.fillText(infoString, 50, 35);
+	
+};
+
+drawChoices = function() {
 	
 };
