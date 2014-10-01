@@ -5,7 +5,7 @@ deliverInitialize = function() {
 	// TODO this should only be called the first frame after the state change.
 	
 	drawChoiceBox();
-	drawScene();
+	drawDeliverScene();
 	drawInfo();
 	
 };
@@ -20,11 +20,9 @@ drawChoiceBox = function() {
 	
 };
 
-drawScene = function() {
+drawDeliverScene = function() {
 	
-	sceneImage = new Image();
-	sceneImage.src = "images/DSTM_deliver_placeholder.png";
-	Game.context.drawImage(sceneImage, 0, 0);
+	Game.context.drawImage(images[imgNames.indexOf("DeliverBG")], 0, 0);
 };
 
 drawInfo = function() {
