@@ -44,7 +44,7 @@ drawInfo = function() {
 	}
 	
 	Game.context.font = "italic 20px arial";
-	Game.context.fillStyle = "#FFFFFF";
+	Game.context.fillStyle = "#000000";
 	Game.context.fillText(infoString, 50, 35);
 	
 };
