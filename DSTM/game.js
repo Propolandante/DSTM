@@ -9,6 +9,7 @@ var clicks = 0;
 var imagesrc = [];
 var imgNames = [];
 var images = [];
+var listenPosition = 0;
 
 // var mouseIsDown = false;
 // var mouseWasDown = false;
@@ -51,6 +52,8 @@ Game.initialize = function() {
 	imagesrc.push("images/paper.png");
 	imgNames.push("Title");
 	imagesrc.push("images/title_bg.png");
+	imgNames.push("RedDot");
+	imagesrc.push("images/reddot.png");
 	
 	// start preloading
     for(i=0; i < imagesrc.length; i++) 
