@@ -26,7 +26,7 @@ Game.initialize = function() {
 	this.context = canvas.getContext('2d');
 	canvas.addEventListener("mousedown", clickButton, false);
 	canvas.addEventListener("mousemove", getMousePos, false);
-	Game.state = "DELIVER";
+	Game.state = "START";
 
 	
 	Game.strings = null;
@@ -72,6 +72,10 @@ Game.draw = function() {
 	// state-specific draw calls
 	switch (Game.state) {
 	case "START":
+		if(Game.prevState !== Game.state)
+		{
+			startInitialize();
+		}
 		drawStart();
 		break;
 	case "LISTEN":
@@ -123,6 +127,7 @@ Game.update = function() {
 			if(!hoverButton)
 			{
 				hoverButton = buttons[i];
+				console.log(hoverButton.width);
 			}
 			else
 			{

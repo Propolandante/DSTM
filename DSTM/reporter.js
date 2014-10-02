@@ -55,6 +55,8 @@ Reporter.prototype.draw = function(){
 	
 };
 
+Reporter.prototype.spawnBubble = 
+
 Reporter.prototype.destroyBubble = function(){
 	
 };
