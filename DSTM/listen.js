@@ -18,7 +18,7 @@ listenInitialize = function() {
 	};
 	nextButton.onClick = function()
 	{
-		if(briefing[briefIndex].Ends !== "TRUE")
+		if(briefing[briefIndex].End != "TRUE")
 		{
 			briefIndex++;
 		}
@@ -28,6 +28,8 @@ listenInitialize = function() {
 			buttons = [];
 		}
 	};
+	
+	buttons.push(nextButton);
 	
 	drawListenScene();
 
@@ -81,6 +83,8 @@ drawListenScene = function() {
 	}
 	
 	Game.context.globalAlpha = 1;
+	
+	Game.context.textAlign = "left";
 };
 
 getBriefing = function() {
@@ -102,6 +106,7 @@ getBriefing = function() {
 		if (Game.strings[i].Identifier.indexOf(briefTag) > -1)
 		{
 			array.push(Game.strings[i]);
+			console.log("pusheen "+array[i].Identifier);
 		}
 	}
 	

@@ -82,7 +82,7 @@ Game.draw = function() {
 	case "LISTEN":
 		if(Game.prevState !== Game.state)
 		{
-			
+			listenInitialize();
 		}
 		drawListen();
 		break;
