@@ -87,6 +87,7 @@ Game.draw = function() {
 	}
 	
 	// general draw calls
+	// TODO pop old buttons off the stack when the state changes!
 	drawButtons();
 	
 	

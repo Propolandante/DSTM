@@ -8,7 +8,7 @@ DAY_001_BRIEF_F,,"Now, go. But remember: do not disappoint us. You are easily re
 DAY_001_TITLE_A,,"Mar. 3, 2048. Morning Press Conference.",1,,
 DAY_001_TOPIC_A,,Staff Changes,1,,
 DAY_001_TALK_A,,"As of today, I am taking over the position of Speaker.",1,DAY_001_TOPIC_A,
-DAY_001_TALK_B,,"My predecessor, Francis Riviera, submitted his resignation late yesterday evening.",1,DAY_001_TOPIC_A,
+DAY_001_TALK_B,,"My predecessor, Francis Riviera, submitted his resignation late yesterday evening.",1,DAY_001_TALK_A,
 DAY_001_QUE_A,"Roberta, The Daily Signal",Is it true that Francis was found in possession of cocaine?,1,DAY_001_TALK_B,
 DAY_001_RES_A,,"That's unfortunately correct, yes.",1,DAY_001_QUE_A,TRUE
 DAY_001_RES_B,,"Some might say that Francis got his nose into some trouble, but we can't comment on it.",1,DAY_001_QUE_A,TRUE
@@ -21,11 +21,11 @@ DAY_001_RES_D,,65536 by 32768 by 1024 by 256.,1,DAY_001_QUE_B,TRUE
 DAY_001_RES_E,,"Do I look like an engineer, Sean? It'll be in the official release later today.",1,DAY_001_QUE_B,TRUE
 DAY_001_TALK_E,,"That's all for today, thank you.",1,,TRUE
 DAY_002_BRIEF_A,,You've done well these past three months. We're pleased.,2,,
-DAY_002_BRIEF_B,,,2,BRIEF_A,
-DAY_002_BRIEF_C,,,2,BRIEF_B,
-DAY_002_BRIEF_D,,,2,BRIEF_C,
-DAY_002_BRIEF_,,,2,BRIEF_D,
-,,,2,BRIEF_E,
+DAY_002_BRIEF_B,,The regular update from our embassy on Pecar hasn't arrived.,2,DAY_002_BRIEF_A,
+DAY_002_BRIEF_C,,,2,DAY_002_BRIEF_B,
+DAY_002_BRIEF_D,,,2,DAY_002_BRIEF_C,
+DAY_002_BRIEF_,,,2,DAY_002_BRIEF_D,
+,,,2,DAY_002_BRIEF_E,
 DAY_002_TITLE_A,,Jun. 7 2048. Morning Press Conference.,2,,
 DAY_002_TOPIC_A,,,2,,
 DAY_002_TALK_A,,,2,,
