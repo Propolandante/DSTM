@@ -54,6 +54,8 @@ Game.initialize = function() {
 	imagesrc.push("images/title_bg.png");
 	imgNames.push("RedDot");
 	imagesrc.push("images/reddot.png");
+	imgNames.push("Reporter1");
+	imagesrc.push("images/reporter1.png");
 	
 	// start preloading
     for(i=0; i < imagesrc.length; i++) 
