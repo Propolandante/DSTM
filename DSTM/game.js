@@ -22,9 +22,13 @@ Game.prevState = "";
 Game.initialize = function() {
 	//this.changeState("DELIVER"); // this should initialize to START, for the start menu
 	this.context = canvas.getContext('2d');
+<<<<<<< HEAD
 	canvas.addEventListener("mousedown", clickButton, false);
 	canvas.addEventListener("mousemove", getMousePos, false);
 	Game.state = "DELIVER";
+=======
+	Game.state = "START";
+>>>>>>> 1ecb5c1b5ba204f8683874d8e1f14650f0f80f37
 	
 	Game.strings = null;
 	
@@ -47,6 +51,8 @@ Game.initialize = function() {
 	imagesrc.push("images/deliver_bg.png");
 	imgNames.push("Paper");
 	imagesrc.push("images/paper.png");
+	imgNames.push("Title");
+	imagesrc.push("images/title_bg.png");
 	
 	// start preloading
     for(i=0; i < imagesrc.length; i++) 
@@ -63,6 +69,7 @@ Game.draw = function() {
 	// state-specific draw calls
 	switch (Game.state) {
 	case "START":
+		drawStart();
 		break;
 	case "LISTEN":
 		if(Game.prevState !== Game.state)
