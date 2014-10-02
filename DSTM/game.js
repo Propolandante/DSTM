@@ -19,6 +19,7 @@ Game.fps = 50;
 Game.state = "";
 // valid states: "START", "LISTEN", "PLAN", "DELIVER"
 Game.prevState = "";
+Game.day = 1;
 
 
 Game.initialize = function() {
@@ -75,8 +76,9 @@ Game.draw = function() {
 	case "LISTEN":
 		if(Game.prevState !== Game.state)
 		{
-			drawListen();
+			
 		}
+		drawListen();
 		break;
 	case "PLAN":
 		break;
