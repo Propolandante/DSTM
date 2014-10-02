@@ -8,7 +8,7 @@ deliverInitialize = function() {
 	//this is only called the first frame after the state change.
 	boxHeight = 250;
 	boxWidth = CANVAS_WIDTH;
-	createChoices("ALIEN_000_STA");
+	createChoices("DAY_001_TALK", "TOPIC_A");
 		
 };
 
@@ -73,7 +73,7 @@ createChoices = function(tag, prev) {
 	if (prev)
 	{
 		// just grabs the letter at the end of the Identifier
-		follows = prev.substr(prev.length - 1);
+		follows = prev;
 	}
 	
 	// First, load the available choices into the choices[] array
@@ -82,6 +82,7 @@ createChoices = function(tag, prev) {
 		// if match is a substring of the Identifier, this returns true
 		if (Game.strings[i].Identifier.indexOf(match) > -1)
 		{
+			console.log(Game.strings[i].Identifier + " matches");
 			// if follows is a substring of the FollowsFrom, this returns true
 			
 			if (follows !== "" && Game.strings[i].Follows.indexOf(follows) > -1)
@@ -113,20 +114,23 @@ createChoices = function(tag, prev) {
 		//var choiceButton = new Button(30, drawHeight - 10, textWidth + 20, 10 + (18*numLines) + 10, choices[i].Identifier);
 		var choiceButton = new Button(30, choiceCenter - choiceEdge, textWidth + 20, choiceEdge*2, choices[i].Identifier, choices[i].String);
 		
-		choiceButton.onHover = function()
-		{
-			this.hover = true;
-		};
-		choiceButton.offHover = function()
-		{
-			this.hover = false;
-		};
+		// choiceButton.onHover = function()
+		// {
+			// this.hover = true;
+		// };
+		// choiceButton.offHover = function()
+		// {
+			// this.hover = false;
+		// };
 		choiceButton.onClick = function()
 		{
 			console.log("Clicked " + this.id);
 		};
 		choiceButton.draw = function()
 		{
+			Game.context.fillStyle = "#D5CBC1";
+			Game.context.fillRect(this.x, this.y, this.width, this.height);
+			
 			Game.context.font = "16px arial";
 			if(this.hover)
 			{
@@ -134,10 +138,10 @@ createChoices = function(tag, prev) {
 			}
 			else
 			{
-				Game.context.fillStyle = "#E6E6E6";
+				Game.context.fillStyle = "#000000";
 			}
 			
-			wrapText(this.str, this.x + 20, this.y + 10, this.width - 20, 18);
+			wrapText(this.str, this.x + 20, this.y + 20, this.width - 20, 18);
 		};
 		
 		console.log("new Button", choiceButton);

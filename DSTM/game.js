@@ -4,6 +4,7 @@ var mousePoint;
 var buttons = [];
 var hoverButton = null;
 var prevHoverButton;
+var clicks = 0;
 
 var imagesrc = [];
 var imgNames = [];
@@ -22,13 +23,10 @@ Game.prevState = "";
 Game.initialize = function() {
 	//this.changeState("DELIVER"); // this should initialize to START, for the start menu
 	this.context = canvas.getContext('2d');
-<<<<<<< HEAD
 	canvas.addEventListener("mousedown", clickButton, false);
 	canvas.addEventListener("mousemove", getMousePos, false);
 	Game.state = "DELIVER";
-=======
-	Game.state = "START";
->>>>>>> 1ecb5c1b5ba204f8683874d8e1f14650f0f80f37
+
 	
 	Game.strings = null;
 	
@@ -136,7 +134,7 @@ Game.update = function() {
 		if (hoverButton)
 		{
 			// and it has an onHover() function
-			if(hoverButton.onHover())
+			if(hoverButton.onHover)
 			{
 				// call that function
 				hoverButton.onHover();
@@ -146,7 +144,7 @@ Game.update = function() {
 		else
 		{
 			// and it has an offHover() function
-			if(prevHoverButton.offHover())
+			if(prevHoverButton.offHover)
 			{
 				// call that function
 				prevHoverButton.offHover();
@@ -182,7 +180,7 @@ drawButtons = function() {
 	for (var i = 0; i < buttons.length; ++i)
 	{
 		// if this button has a draw function
-		if(buttons[i].draw())
+		if(buttons[i].draw)
 		{
 			// call that function
 			buttons[i].draw();
@@ -203,15 +201,17 @@ getMousePos = function(event) {
 
 clickButton = function() {
 	
+	//console.log("Click number " + ++clicks);
+	
 	if(hoverButton)
 	{
-		if(hoverButton.onClick())
+		if(hoverButton.onClick)
 		{
 			hoverButton.onClick();
 		}
 		else
 		{
-			console.log("No onClick method for " + hoverButton.id);
+			console.log("ELSE");
 		}
 	}
 	else
