@@ -64,10 +64,6 @@ drawInfo = function() {
 /*
  * drawChoices example:
  * 
- * Say you want to grab all the choices for the opening statement
- * of ALIEN_000. Then, your function call will be:
- * drawChoices("ALIEN", "000", "STA");
- * And it will grab ALIEN_000_STA_A, ALIEN_000_STA_B, and ALIEN_000_STA_C
  */
 
 createChoices = function(tag, prev) {
@@ -86,17 +82,14 @@ createChoices = function(tag, prev) {
 		// if match is a substring of the Identifier, this returns true
 		if (Game.strings[i].Identifier.indexOf(match) > -1)
 		{
-			console.log(Game.strings[i].Identifier + " matches");
 			// if follows is a substring of the FollowsFrom, this returns true
 			
 			if (follows !== "" && Game.strings[i].Follows.indexOf(follows) > -1)
 			{
-				//console.log("Pushing " + Game.strings[i].Identifier);
 				choices.push(Game.strings[i]);
 			}
 			else if (follows === "" && Game.strings[i].Follows === "")
 			{
-				//console.log("Pushing " + Game.strings[i].Identifier);
 				choices.push(Game.strings[i]);
 			}
 		}
@@ -116,19 +109,16 @@ createChoices = function(tag, prev) {
 	{
 		//var numLines = wrapText(choices[i].String, 50, drawHeight, textWidth, 18);
 		//var choiceButton = new Button(30, drawHeight - 10, textWidth + 20, 10 + (18*numLines) + 10, choices[i].Identifier);
-		var choiceButton = new Button(30, choiceCenter - choiceEdge, textWidth + 20, choiceEdge*2, choices[i].Identifier, choices[i].String);
+		var choiceButton = new Button(30, 
+			choiceCenter - choiceEdge, 
+			textWidth + 20, choiceEdge*2, 
+			choices[i]);
 		
-		// choiceButton.onHover = function()
-		// {
-			// this.hover = true;
-		// };
-		// choiceButton.offHover = function()
-		// {
-			// this.hover = false;
-		// };
 		choiceButton.onClick = function()
 		{
 			console.log("Clicked " + this.id);
+			clearChoices();
+			createChoices(this.tag, this.id);
 		};
 		choiceButton.draw = function()
 		{
@@ -155,7 +145,15 @@ createChoices = function(tag, prev) {
 		choiceCenter += boxHeight / (choices.length + 1);
 	}
 	
-	
-	
-	
+};
+
+clearChoices = function()
+{
+	for (var i = 0; i < buttons.length; ++i)
+	{
+		if (buttons[i].type === "choice")
+		{
+			buttons.splice(i, 1);
+		}
+	}
 };
