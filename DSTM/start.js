@@ -10,6 +10,8 @@ startInitialize = function() {
 	};
 	
 	buttons.push(titleButton);
+	
+	console.log("test");
 		
 	
 };
