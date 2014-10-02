@@ -3,10 +3,14 @@
 startInitialize = function() {
 	
 	// TODO this should only be called the first frame after the state change.
+	var titleButton = new Button(0, 0, 720, 720, null);
+	titleButton.onClick = function(){
+		Game.state = "LISTEN";
+		buttons = [];
+	};
 	
-	//drawChoiceBox();
-	drawListenScene();
-	//drawInfo();
+	buttons.push(titleButton);
+		
 	
 };
 

@@ -2,6 +2,7 @@
 
 var boxHeight = null;
 var boxWidth = null;
+var testReporter = null;
 
 deliverInitialize = function() {
 	
@@ -9,7 +10,9 @@ deliverInitialize = function() {
 	boxHeight = 250;
 	boxWidth = CANVAS_WIDTH;
 	createChoices("DAY_001_TALK", "TOPIC_A");
-		
+	testReporter = new Reporter(130,270);
+	testReporter.bubble = true;
+	testReporter.bubbleOpen = true;
 };
 
 deliverDraw = function() {
@@ -31,6 +34,7 @@ drawChoiceBox = function() {
 drawDeliverScene = function() {
 	
 	Game.context.drawImage(images[imgNames.indexOf("DeliverBG")], 0, 0);
+	testReporter.draw();
 };
 
 drawInfo = function() {
