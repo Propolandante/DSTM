@@ -73,14 +73,14 @@ Game.draw = function() {
 	// state-specific draw calls
 	switch (Game.state) {
 	case "START":
-		if(Game.prevState !== Game.state)
+		if(Game.prevState != Game.state)
 		{
 			startInitialize();
 		}
 		drawStart();
 		break;
 	case "LISTEN":
-		if(Game.prevState !== Game.state)
+		if(Game.prevState != Game.state)
 		{
 			listenInitialize();
 		}
@@ -89,7 +89,7 @@ Game.draw = function() {
 	case "PLAN":
 		break;
 	case "DELIVER":
-		if(Game.prevState !== Game.state)
+		if(Game.prevState != Game.state)
 		{
 			deliverInitialize();
 		}
@@ -129,7 +129,7 @@ Game.update = function() {
 			if(!hoverButton)
 			{
 				hoverButton = buttons[i];
-				console.log(hoverButton.width);
+				//console.log(hoverButton.width);
 			}
 			else
 			{

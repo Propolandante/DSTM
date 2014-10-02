@@ -1,6 +1,7 @@
 // This file handles all of the functions concerning the DELIVER state
 
 var briefing = [];
+var topics = [];
 var briefIndex = 0;
 var nextButton = null;
 
@@ -9,6 +10,7 @@ listenInitialize = function() {
 	// TODO this should only be called the first frame after the state change.
 	
 	briefing = getBriefing();
+	topics = getTopics();
 	
 	// initialize the NEXT button
 	nextButton = new Button(0,0,CANVAS_WIDTH,CANVAS_HEIGHT,null);
@@ -85,6 +87,9 @@ drawListenScene = function() {
 	Game.context.globalAlpha = 1;
 	
 	Game.context.textAlign = "left";
+	
+	
+	drawTopics();
 };
 
 getBriefing = function() {
@@ -101,6 +106,7 @@ getBriefing = function() {
 		console.log("WHAT YEAR IS IT?");
 	}
 	
+	//console.log("length: "+Game.strings.length);
 	for (var i = 0; i < Game.strings.length; ++i)
 	{
 		if (Game.strings[i].Identifier.indexOf(briefTag) > -1)
@@ -108,9 +114,60 @@ getBriefing = function() {
 			array.push(Game.strings[i]);
 			console.log("pusheen "+array[i].Identifier);
 		}
+		else
+		{
+			console.log("No match");
+		}
 	}
 	
 	return array;
+	
+};
+
+getTopics = function() {
+	
+	var topicTag = null;
+	var array = [];
+	
+	if (Game.day == 1) // should always return true for SlugJam
+	{
+		topicTag = "DAY_001_TOPIC";
+	}
+	else
+	{
+		console.log("WHAT YEAR IS IT?");
+	}
+	//console.log("length: "+Game.strings.length);
+	for (var i = 0; i < Game.strings.length; ++i)
+	{
+		if (Game.strings[i].Identifier.indexOf(topicTag) > -1)
+		{
+			array.push(Game.strings[i]);
+			console.log("pusheen "+Game.strings[i].Identifier);
+		}
+		else
+		{
+			console.log("No match");
+		}
+	}
+	
+	return array;
+	
+};
+
+drawTopics = function() {
+	
+	Game.context.font = "30px arial";
+	Game.context.fillStyle = "#000000";
+	
+	var x = 175;
+	var y = 400;
+	console.log(topics);
+	for (var i = 0; i < topics.length; ++i)
+	{
+		Game.context.fillText(topics[i].String, x, y);
+		y += 75;
+	}
 	
 };
 
