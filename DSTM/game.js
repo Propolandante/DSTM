@@ -1,10 +1,18 @@
 var Game = {};
 var keysDown = {};
+var mousePoint;
+var buttons = [];
+var hoverButton = null;
+var prevHoverButton;
+var clicks = 0;
 
 var imagesrc = [];
 var imgNames = [];
 var images = [];
 var listenPosition = 0;
+
+// var mouseIsDown = false;
+// var mouseWasDown = false;
 
 // Game variables
 Game.fps = 50;
@@ -12,10 +20,14 @@ Game.state = "";
 // valid states: "START", "LISTEN", "PLAN", "DELIVER"
 Game.prevState = "";
 
+
 Game.initialize = function() {
 	//this.changeState("DELIVER"); // this should initialize to START, for the start menu
 	this.context = canvas.getContext('2d');
-	Game.state = "START";
+	canvas.addEventListener("mousedown", clickButton, false);
+	canvas.addEventListener("mousemove", getMousePos, false);
+	Game.state = "DELIVER";
+
 	
 	Game.strings = null;
 	
@@ -54,26 +66,98 @@ Game.initialize = function() {
 
 Game.draw = function() {
 	this.context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-
+	
+	// state-specific draw calls
 	switch (Game.state) {
 	case "START":
 		drawStart();
 		break;
 	case "LISTEN":
-		drawListen();
+		if(Game.prevState !== Game.state)
+		{
+			drawListen();
+		}
 		break;
 	case "PLAN":
 		break;
 	case "DELIVER":
-		deliverInitialize();
-
+		if(Game.prevState !== Game.state)
+		{
+			deliverInitialize();
+		}
+		deliverDraw();
 		break;
 	}
+	
+	// general draw calls
+	drawButtons();
+	
+	
+	Game.prevState = Game.state;
 
 };
 
 Game.update = function() {
-	//check for input
+	
+	// check if mouse is interacting with any buttons
+	
+	if (hoverButton)
+	{
+		prevHoverButton = hoverButton;
+		hoverButton = null;
+	}
+	
+	for (var i = 0; i < buttons.length; ++i)
+	{
+		if(!mousePoint){console.log("No MousePoint");break;}
+		if(!buttons[i]){console.log("No Button");break;}
+		
+		if((mousePoint.x >= buttons[i].x 
+			&& mousePoint.x <= buttons[i].x + buttons[i].width) 
+			&& (mousePoint.y >= buttons[i].y 
+			&& mousePoint.y <= buttons[i].y + buttons[i].height))
+		{
+			if(!hoverButton)
+			{
+				hoverButton = buttons[i];
+			}
+			else
+			{
+				console.log("ERROR! Overlapping buttons!");
+			}
+			
+		}
+	}
+	
+	// handle button hover/unhover logic
+	
+	if (hoverButton != prevHoverButton)
+	{
+		// if we've just started hovering over a button
+		if (hoverButton)
+		{
+			// and it has an onHover() function
+			if(hoverButton.onHover)
+			{
+				// call that function
+				hoverButton.onHover();
+			}
+		}
+		// if we've just STOPPED hovering over a button
+		else
+		{
+			// and it has an offHover() function
+			if(prevHoverButton.offHover)
+			{
+				// call that function
+				prevHoverButton.offHover();
+			}
+		}
+	}
+	
+	
+	
+	//check for keyboard input
 	for (var key in keysDown) {
 		var value = Number(key);
 		lastkey = value;
@@ -92,6 +176,52 @@ Game.update = function() {
 			break;
 		}
 	}
+};
+drawButtons = function() {
+	// loop through all the buttons in the game and call their draw() function
+	
+	for (var i = 0; i < buttons.length; ++i)
+	{
+		// if this button has a draw function
+		if(buttons[i].draw)
+		{
+			// call that function
+			buttons[i].draw();
+		}
+	}
+};
+
+
+getMousePos = function(event) {
+	
+	var rect = canvas.getBoundingClientRect();
+	mousePoint = {
+		x: event.clientX - rect.left,
+		y: event.clientY - rect.top
+	};
+	//console.log("x: " + mousePoint.x + " y: " + mousePoint.y);
+};
+
+clickButton = function() {
+	
+	//console.log("Click number " + ++clicks);
+	
+	if(hoverButton)
+	{
+		if(hoverButton.onClick)
+		{
+			hoverButton.onClick();
+		}
+		else
+		{
+			console.log("ELSE");
+		}
+	}
+	else
+	{
+		console.log("Clicked nothing.");
+	}
+	
 };
 
 window.addEventListener("keydown", function(event) {
