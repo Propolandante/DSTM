@@ -106,8 +106,22 @@ Game.draw = function() {
 
 Game.update = function() {
 	
-	// check if mouse is interacting with any buttons
 	
+	// state-specific update calls
+	switch (Game.state) {
+	case "START":
+		break;
+	case "LISTEN":
+		break;
+	case "PLAN":
+		break;
+	case "DELIVER":
+		updateDeliver();
+		break;
+	}
+	
+	
+	// check if mouse is interacting with any buttons
 	if (hoverButton)
 	{
 		prevHoverButton = hoverButton;

@@ -4,6 +4,10 @@ function Button(x, y, width, height, scriptObj) {
 	this.y = y;
 	this.width = width;
 	this.height = height;
+	console.log(x);
+	console.log(width);
+	console.log(y);
+	console.log(height);
 	this.elem = scriptObj;
 
 	if (this.elem != null) {

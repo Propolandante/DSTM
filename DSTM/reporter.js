@@ -4,12 +4,32 @@ function Reporter(x, y) {
 	this.y = y;
 	this.width = 300;
 	this.height = 400;
+	this.bubbleChange = false;
 	this.bubble = false;
 	this.bubbleOpen = false;
+	this.button = null;
 }
 
 Reporter.prototype.update = function(){
-	
+	if(this.bubbleChange === true){
+		if(this.bubble){
+			if(this.bubbleOpen){
+				this.bubble = false;
+				this.bubbleOpen = false;
+				this.destroyBubble();
+			}else{
+				this.bubbleOpen = true;
+				this.destroyBubble();
+				this.spawnBubble(this.width,100);
+				console.log("large");
+			}
+		}else{
+			this.bubble = true;
+			this.spawnBubble(this.width,25);
+			console.log("small");
+		}
+		this.bubbleChange = false;
+	}
 };
 
 Reporter.prototype.draw = function(){
@@ -55,8 +75,18 @@ Reporter.prototype.draw = function(){
 	
 };
 
-Reporter.prototype.spawnBubble = 
+Reporter.prototype.spawnBubble = function(width,height){
+	this.button = new Button(this.x,this.y+20,width,height,null);
+	this.button.onClick = function(){
+		this.bubbleChange = true;
+	};
+	buttons.push(this.button);
+	console.log(buttons.indexOf(this.button));
+};
 
 Reporter.prototype.destroyBubble = function(){
+	var index = buttons.indexOf(this.button);
+	buttons.splice(index, 1);
+	console.log("removed");
 	
 };

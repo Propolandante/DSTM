@@ -11,8 +11,8 @@ deliverInitialize = function() {
 	boxWidth = CANVAS_WIDTH;
 	createChoices("DAY_001_TALK", "TOPIC_A");
 	testReporter = new Reporter(130,270);
-	testReporter.bubble = true;
-	testReporter.bubbleOpen = true;
+	testReporter.bubbleChange = true;
+	
 };
 
 deliverDraw = function() {
@@ -59,6 +59,10 @@ drawInfo = function() {
 	Game.context.fillStyle = "#000000";
 	Game.context.fillText(infoString, 50, 35);
 	
+};
+
+updateDeliver = function(){
+	testReporter.update();
 };
 
 /*
