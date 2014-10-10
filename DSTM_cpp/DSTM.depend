@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1412978080 source:c:\sfml\dstm\main.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	"start.h"
+	"listen.h"
+	<iostream>
+
+1412977782 c:\sfml\dstm\start.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412978432 source:c:\sfml\dstm\listen.cpp
+	"listen.h"
+	<SFML/Graphics.hpp>
+
+1412978424 c:\sfml\dstm\listen.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412977743 source:c:\sfml\dstm\start.cpp
+	"start.h"
+	<SFML/Graphics.hpp>
+
+1412978416 source:c:\sfml\dstm\deliver.cpp
+	"deliver.h"
+	<SFML/Graphics.hpp>
+
+1412978347 c:\sfml\dstm\deliver.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412978416 source:c:\dstm\dstm_cpp\deliver.cpp
+	"deliver.h"
+	<SFML/Graphics.hpp>
+
+1412978347 c:\dstm\dstm_cpp\deliver.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412978432 source:c:\dstm\dstm_cpp\listen.cpp
+	"listen.h"
+	<SFML/Graphics.hpp>
+
+1412978424 c:\dstm\dstm_cpp\listen.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412978571 source:c:\dstm\dstm_cpp\main.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	"start.h"
+	"listen.h"
+	"deliver.h"
+	<iostream>
+
+1412977782 c:\dstm\dstm_cpp\start.h
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1412977743 source:c:\dstm\dstm_cpp\start.cpp
+	"start.h"
+	<SFML/Graphics.hpp>
+
