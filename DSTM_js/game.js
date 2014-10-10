@@ -33,7 +33,7 @@ Game.initialize = function() {
 	Game.strings = null;
 	
 	// load the game's Strings
-	Papa.parse("/DSTM/strings/strings.csv", {
+	Papa.parse("strings/strings.csv", {
 	download: true,
 	header: true,
 	complete: function(results) {

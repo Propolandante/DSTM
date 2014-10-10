@@ -1,0 +1,70 @@
+Identifier,Speaker,String,Day,Follows,End
+DAY_001_BRIEF_A,,"Welcome. Your promotion to Speaker came suddenly, but...",1,,
+DAY_001_BRIEF_B,,...your predecessor had something of an uncooperative spirit.,1,DAY_001_BRIEF_A,
+DAY_001_BRIEF_C,,We trust you won't repeat his mistakes.,,DAY_001_BRIEF_B,
+DAY_001_BRIEF_D,,"In your conference this morning, a Ms. Roberta Plante will ask you...",1,DAY_001_BRIEF_C,
+DAY_001_BRIEF_E,,...to confirm the reason why Mr. Riviera suddenly resigned.,,DAY_001_BRIEF_D,
+DAY_001_BRIEF_F,,"You are to confirm her allegations, but only indirectly.",1,DAY_001_BRIEF_E,
+DAY_001_BRIEF_G,,The only other topic today will be to announce our new line of holodisplays.,1,DAY_001_BRIEF_F,
+DAY_001_BRIEF_H,,"Now, go. But remember: do not disappoint us. You are easily replaced.",1,DAY_001_BRIEF_G,TRUE
+DAY_001_TITLE_A,,"Mar. 3, 2048. Morning Press Conference.",1,,
+DAY_001_TOPIC_A,,Staff Changes,1,,
+DAY_001_TALK_A,,"As of today, I am taking over the position of Speaker.",1,DAY_001_TOPIC_A,
+DAY_001_TALK_B,,"My predecessor, Francis Riviera, submitted his resignation late yesterday evening.",1,DAY_001_TALK_A,
+DAY_001_QUE_A,Roberta (The Daily Signal),Is it true that Francis was found in possession of cocaine?,1,DAY_001_TALK_B,
+DAY_001_RES_A,,"That's unfortunately correct, yes.",1,DAY_001_QUE_A,TRUE
+DAY_001_RES_B,,"Some might say that Francis got his nose into some trouble, but we can't comment on it.",1,DAY_001_QUE_A,TRUE
+DAY_001_RES_C,,"No, that's not true. The stress of the job got to him, and he wanted to spend more time with his family.",1,DAY_001_QUE_A,TRUE
+DAY_001_TOPIC_B,,Product Announcements,1,,
+DAY_001_TALK_C,,"We're adding a new line of midrange holographic displays, which will be available next fall.",1,DAY_001_TOPIC_B,
+DAY_001_TALK_D,,These new displays will be compatible with the LifeSync technology we announced in May. ,1,DAY_001_TALK_C,
+DAY_001_QUE_B,Sean (GameBeat.net),What's the resolution of the new displays?,1,DAY_001_TALK_C,
+DAY_001_RES_D,,65536 by 32768 by 1024 by 256.,1,DAY_001_QUE_B,TRUE
+DAY_001_RES_E,,"Do I look like an engineer, Sean? It'll be in the official release later today.",1,DAY_001_QUE_B,TRUE
+DAY_001_TALK_E,,"That's all for today, thank you.",1,,TRUE
+DAY_002_BRIEF_A,,The regular update from our embassy on Pecar hasn't arrived.,2,,
+DAY_002_BRIEF_B,,We don't need to cause a ruckus with this; downplay it as much as possible.,2,DAY_002_BRIEF_A,
+DAY_002_BRIEF_C,,"Freddie from the San Jose Mercury might ask about this, so be careful.",2,DAY_002_BRIEF_B,
+DAY_002_BRIEF_D,,"In other news, we're going forward with quantum display technology.",2,DAY_002_BRIEF_C,
+DAY_002_BRIEF_E,,"As a result, all of our holodisplay lines are being discontinued.",2,DAY_002_BRIEF_D,
+DAY_002_BRIEF_F,,You've done well these past three months. We're pleased.,2,DAY_002_BRIEF_E,
+DAY_002_TITLE_A,,Jun. 7 2048. Morning Press Conference.,2,,
+DAY_002_TOPIC_A,,Product Announcements,2,,
+DAY_002_TALK_A,,Last month we mentioned some promising breakthroughs on quantum display technology.,2,,
+DAY_002_TALK_B,,Today we'd like to announce that starting next fall we'll be launching the QuanTech line.,2,DAY_002_TALK_A,
+DAY_002_TALK_C,,"As a result of this, we'll be discontinuing all of our holographic display products.",2,DAY_002_TALK_B,
+DAY_002_QUE_A,Wurda (TechSave.Us),"The only method of safely recycling holodisplays is, as you know, currently very expensive. Now that you plan to retire them en masse, will there be any subsidies towards recycling programs?",2,DAY_002_TALK_C,
+DAY_002_RES_A,,Sustainability is important to us. We're in the initial planning stages of a similar program.,2,DAY_002_QUE_A,TRUE
+DAY_002_RES_B,,Nothing to announce at this time.,2,DAY_002_QUE_A,TRUE
+DAY_002_RES_C,,"We don't have any plans to subsidize recycling programs, no.",2,DAY_002_QUE_A,TRUE
+DAY_002_QUE_B,Kevin (UGeo),Don't you think that's irresponsible?,2,DAY_002_RES_C,
+DAY_002_RES_D,,We're under no obligation to incur the extra costs.,2,DAY_002_QUE_B,TRUE
+DAY_002_RES_E,,"Of course, but it's a big expense for something as abstract as sustainibility.",2,DAY_002_QUE_B,TRUE
+DAY_002_TALK_D,,That's all for today. Thank you.,2,DAY_002_QUE_B,TRUE
+DAY_002_QUE_C,Freddie (Mercury),"Speaking of Pecarran technology, it's Tuesday. Where's our weekly update from the technology embassy?",2,DAY_002_TALK_A,
+DAY_002_RES_F,,"We don't know. We haven't gotten it, and we don't know why.",2,DAY_002_QUE_C,TRUE
+DAY_002_RES_G,,"It's not on the schedule, Freddie, don't stop me now.",2,DAY_002_QUE_C,TRUE
+DAY_002_RES_H,,"We think there was some debris in the path of the transmission, the burst transmission we got was corrupted.",2,DAY_002_QUE_C,TRUE
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+ALIEN_000_TOP_A,,Missed Message from Pecar,1,,
+ALIEN_000_STA_A,,"Yesterday at around 9PM IBM Standard Time, SETI experienced a major satellite malfunction.",1,,
+ALIEN_000_STA_B,,"Yesterday morning, the Search for Extraterrestrial Intelligence suffered an accidental explosion, putting a major satellite out of commission.",1,,
+ALIEN_000_STA_C,,A recent explosion at SETI has jeopardized their ability to communicate with our extraterrestrial allies.,1,,
+ALIEN_000_STA_D,,This resulted in the loss of almost 40% of the information in the latest communication from Pecar.,1,A B,
+ALIEN_000_STA_E,,"As a result, a significant portion of the recent message from Pecar was not received.",1,A B,
+ALIEN_000_STA_F,,We are currently investigating the possibility that this is a terrorist attack.,1,C,
+ALIEN_000_STA_G,,This is the first major lapse in communication between Earth and Pecar since we made first contact in 2029.,1,D E F,
